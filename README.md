@@ -1,6 +1,7 @@
 # Food Store - Sistema de Gestión de Pedidos de Comida (Consola)
 
 ## Universidad Tecnológica Nacional (UTN)
+
 **Carrera:** Tecnicatura Universitaria en Programación  
 **Materia:** Programación II  
 **Modalidad:** A Distancia  
@@ -9,7 +10,7 @@
 
 ---
 
-## 👥 Integrantes - Comisión 5
+## Integrantes - Comisión 5
 
 - **Cordero Campero Elisabeth**
 - **Franco Analía Rocío**
@@ -17,16 +18,16 @@
 
 ---
 
-## 📝 Enlaces Obligatorios de la Entrega
+## Enlaces Obligatorios de la Entrega
 
-> 📢 **Requisitos de Cátedra**
+**Requisitos de Cátedra**
 
-- 🎥 **Video de Demostración (Flujo Completo):** [Ingresar a la demostración en video](AGREGAR_LINK_AQUI)
-- 📄 **Documentación Académica (PDF):** [Descargar Documento PDF](AGREGAR_LINK_O_RUTA_DEL_PDF)
+- **Video de Demostración (Flujo Completo):** [Ingresar a la demostración en video](AGREGAR_LINK_AQUI)
+- **Documentación Académica (PDF):** [Descargar Documento PDF](AGREGAR_LINK_O_RUTA_DEL_PDF)
 
 ---
 
-## 🚀 Descripción del Proyecto
+## Descripción del Proyecto
 
 Este proyecto corresponde al **Trabajo Práctico Integrador (TPI)** de la materia **Programación II** de la **Tecnicatura Universitaria en Programación – UTN**.
 
@@ -42,7 +43,7 @@ El trabajo busca integrar los principales conceptos teóricos de la materia: cla
 
 ---
 
-## ⚙️ Funcionalidades Principales
+## Funcionalidades Principales
 
 - Gestión de categorías.
 - Gestión de productos.
@@ -59,7 +60,7 @@ El trabajo busca integrar los principales conceptos teóricos de la materia: cla
 
 ---
 
-## 🧠 Conceptos Aplicados
+## Conceptos Aplicados
 
 En el desarrollo del sistema se aplicaron los siguientes conceptos de Programación II:
 
@@ -82,7 +83,7 @@ En el desarrollo del sistema se aplicaron los siguientes conceptos de Programaci
 
 ---
 
-## 🛠 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - Java 21
 - Programación Orientada a Objetos (POO)
@@ -93,7 +94,7 @@ En el desarrollo del sistema se aplicaron los siguientes conceptos de Programaci
 
 ---
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 src/
@@ -134,24 +135,27 @@ src/
 
 ---
 
-## 🏛 Arquitectura del Sistema
+## Arquitectura del Sistema
 
 El sistema fue organizado aplicando una separación de responsabilidades mediante paquetes.
 
-### 📌 Interfaz de Usuario
+### Interfaz de Usuario
+
 La capa de interfaz de usuario contiene los menús de consola. Su función es mostrar opciones, solicitar datos al usuario y presentar resultados.
 
-### 📌 Servicios
+### Servicios
+
 La capa de servicios contiene la lógica de negocio. Allí se realizan las principales validaciones, como controlar precios inválidos, stock insuficiente, emails duplicados o entidades inexistentes.
 
-### 📌 Configuración y Almacenamiento
+### Configuración y Almacenamiento
+
 La capa de configuración contiene la clase `Listas`, utilizada como almacenamiento en memoria. Esta clase centraliza las colecciones del sistema y permite guardar categorías, productos, usuarios y pedidos durante la ejecución del programa.
 
 Esta organización permite mantener el código más ordenado, reutilizable y preparado para futuras modificaciones.
 
 ---
 
-## 💾 Almacenamiento de Datos
+## Almacenamiento de Datos
 
 En esta etapa, el sistema no utiliza una base de datos real.
 
@@ -163,7 +167,7 @@ La estructura del proyecto queda preparada para que, en una etapa futura, pueda 
 
 ---
 
-## ✅ Validaciones Implementadas
+## Validaciones Implementadas
 
 El sistema incluye validaciones para evitar inconsistencias:
 
@@ -179,7 +183,7 @@ Estas validaciones se realizan principalmente en la capa de servicios, separando
 
 ---
 
-## ▶️ Instrucciones de Ejecución
+## Instrucciones de Ejecución
 
 ### Requisitos
 
@@ -206,7 +210,7 @@ Main.java
 
 ---
 
-## ▶️ Ejecución desde Terminal
+## Ejecución desde Terminal
 
 ### Compilar
 
@@ -222,7 +226,7 @@ java Main
 
 ---
 
-## 📌 Estado del Proyecto
+## Estado del Proyecto
 
 Proyecto académico desarrollado para la materia Programación II.
 
