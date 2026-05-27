@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package entidades;
 
 /**
- *
- * @author corde
+ * Interfaz para objetos que pueden calcular un monto total.
+ * Basada en el estilo de TPs anteriores (como Pagable).
  */
-public class Calculable {
-    
+public interface Calculable {
+    void calcularTotal();
 }
