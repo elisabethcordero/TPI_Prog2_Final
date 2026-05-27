@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package enumeraciones;
 
+package enumeraciones;
 /**
- *
- * @author nadia
+ * Enumeración para las formas de pago según el UML.
  */
-public class FormaPago {
-    
+public enum FormaPago {
+    TARJETA, TRANSFERENCIA, EFECTIVO
 }
