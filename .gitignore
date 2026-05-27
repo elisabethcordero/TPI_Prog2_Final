@@ -13,9 +13,5 @@ nbdist/
 *.class
 
 # Project specific
-build/
-nbproject/private/
-
-nbproject/
-build.xml
-manifest.mf
+TPI_Prog2/build/
+TPI_Prog2/nbproject/private/
