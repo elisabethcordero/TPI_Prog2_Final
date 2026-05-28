@@ -17,6 +17,10 @@ public class Producto extends Base {
         this.nombre = "Sin nombre";
         this.descripcion = "Sin descripción";
         this.imagen = "Sin imagen";
+        this.precio = 0.0;
+        this.stock = 0;
+        this.disponible = false;
+        this.categoria = null;
     }
 
     public Producto(Long id, String nombre, Double precio, String descripcion, int stock, String imagen, Boolean disponible, Categoria categoria) {
