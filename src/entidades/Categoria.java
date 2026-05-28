@@ -38,6 +38,6 @@ public class Categoria extends Base {
 
     @Override
     public String toString() {
-        return "ID: " + id + " - " + nombre + " (" + descripcion + ")";
+        return "ID: " + getId() + " - " + nombre + " (" + descripcion + ")";
     }
 }

@@ -109,7 +109,7 @@ public class Pedido extends Base implements Calculable {
             : "\nCLIENTE: Sin cliente asociado";
             
         return "======================================================================\n" +
-               "PEDIDO ID: " + id + " | FECHA: " + fecha + 
+               "PEDIDO ID: " + getId() + " | FECHA: " + fecha + 
                clienteInfo + "\n" +
                "ESTADO: " + estado + " | PAGO: " + formaPago + "\n" +
                "DETALLES DEL PEDIDO:";

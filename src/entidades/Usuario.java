@@ -84,6 +84,6 @@ public class Usuario extends Base {
 
     @Override
     public String toString() {
-        return "ID: " + id + " - " + nombre + " " + apellido + " (" + mail + ") - Rol: " + rol;
+        return "ID: " + getId() + " - " + nombre + " " + apellido + " (" + mail + ") - Rol: " + rol;
     }
 }

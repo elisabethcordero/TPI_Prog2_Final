@@ -88,6 +88,6 @@ public class Producto extends Base {
 
     @Override
     public String toString() {
-        return "ID: " + id + " - " + nombre + "| Precio: $" + String.format("%.2f", precio) + " - Stock: " + stock + " - Categoria: " + (categoria != null ? categoria.getNombre() : "N/A");
+        return "ID: " + getId() + " - " + nombre + "| Precio: $" + String.format("%.2f", precio) + " - Stock: " + stock + " - Categoria: " + (categoria != null ? categoria.getNombre() : "N/A");
     }
 }
