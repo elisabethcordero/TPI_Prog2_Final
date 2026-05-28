@@ -9,9 +9,9 @@ import java.util.Objects;
  * ID de tipo Long según especificación del UML del PI.
  */
 public abstract class Base {
-    protected Long id;
-    protected boolean eliminado;
-    protected LocalDateTime createdAt;
+    private Long id;
+    private boolean eliminado;
+    private LocalDateTime createdAt;
 
     public Base() {
         this.eliminado = false;
