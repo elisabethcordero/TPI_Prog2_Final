@@ -106,7 +106,7 @@ public class MenuCategoria extends MenuBase {
                         if (CategoriaService.eliminar(id)) {
                             System.out.println("Categoría eliminada.");
                         } else {
-                            System.out.println("Error: No se puede eliminar la categoría porque tiene productos asociados.");
+                            System.out.println("Error: No se puede eliminar la categoría porque tiene productos activos asociados.");
                         }
                     } else if (confirmacion.equals("N")) {
                         System.out.println("Eliminación cancelada.");
