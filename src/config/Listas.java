@@ -92,8 +92,8 @@ public class Listas {
     // --- MÉTODOS PARA USUARIOS ---
     public static boolean agregarUsuario(Usuario usuario) {
         for (Usuario u : usuarios) {
-            if (u.getMail().equalsIgnoreCase(usuario.getMail())) {
-                return false; 
+            if (!u.isEliminado() && u.getMail().equalsIgnoreCase(usuario.getMail())) {
+                return false;
             }
         }
         usuario.setId(proximoIdUsuario++);

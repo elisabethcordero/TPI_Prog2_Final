@@ -13,7 +13,9 @@ public class UsuarioService {
             throw new MailDuplicadoException("El mail '" + mail + "' ya está registrado en el sistema.");
         }
         Usuario nuevo = new Usuario(0L, nombre, apellido, mail, celular, password, rol);
-        Listas.agregarUsuario(nuevo);
+        if (!Listas.agregarUsuario(nuevo)) {
+            throw new MailDuplicadoException("El mail '" + mail + "' ya está registrado en el sistema.");
+        }
     }
 
     public static boolean existeMail(String mail) {
