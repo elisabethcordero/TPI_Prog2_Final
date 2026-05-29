@@ -6,7 +6,9 @@ import interfazUsuario.MenuUsuario;
 import interfazUsuario.MenuPedido;
 
 /**
- * Alumnas: Nadia Garcia. Analia Franco. Elisabeth Cordero Campero.
+ * Alumnas: Nadia Garcia. 
+ * Analia Franco. 
+ * Elisabeth Cordero Campero.
  */
 public class Main {
 

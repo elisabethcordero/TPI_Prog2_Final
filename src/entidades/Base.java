@@ -4,10 +4,7 @@ package entidades;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/**
- * Clase base abstracta para todas las entidades del sistema.
- * ID de tipo Long según especificación del UML del PI.
- */
+
 public abstract class Base {
     private Long id;
     private boolean eliminado;

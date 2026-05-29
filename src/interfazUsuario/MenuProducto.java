@@ -107,7 +107,7 @@ public class MenuProducto extends MenuBase {
             }
         } while (!idValido);
 
-        // REQUISITO HU-PROD-02: Estado de disponibilidad
+        // Estado de disponibilidad
         System.out.print("¿Habilitar producto para la venta inmediata? (S/N): ");
         boolean disponible = leer.nextLine().trim().equalsIgnoreCase("S");
 

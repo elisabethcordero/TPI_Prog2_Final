@@ -81,10 +81,9 @@ public class MenuPedido extends MenuBase {
                     System.out.print("Cantidad: ");
                     int cant = Integer.parseInt(leer.nextLine());
                     if (cant > 0 && cant <= prod.getStock()) {
-                        // REQUISITO: Usar obligatoriamente addDetallePedido de la clase Pedido
+                        
                         nuevoPedido.addDetallePedido(cant, prod.getPrecio(), prod);
                         
-                        // Guardamos para revertir si falla luego
                         prod.setStock(prod.getStock() - cant);
                         productosAfectados.add(prod);
                         cantidadesAfectadas.add(cant);
@@ -101,7 +100,6 @@ public class MenuPedido extends MenuBase {
             }
 
             if (!nuevoPedido.getDetalles().isEmpty()) {
-                // Si todo salió bien, persistimos el pedido
                 PedidoService.guardarPedido(nuevoPedido);
                 System.out.println("¡Pedido #" + nuevoPedido.getId() + " creado con éxito!");
             } else {
@@ -109,7 +107,7 @@ public class MenuPedido extends MenuBase {
             }
 
         } catch (Exception e) {
-            // REQUISITO: Si hay excepción, cancelar la creación y evitar datos inconsistentes
+            // Si hay excepción, cancela la creación y evita datos inconsistentes
             System.out.println("Error al crear el pedido: " + e.getMessage());
             System.out.println("Cancelando operación y restaurando stock...");
             
@@ -131,7 +129,6 @@ public class MenuPedido extends MenuBase {
             return;
         }
 
-        // Cumplimos con el requisito "Opcional" de filtrar por usuario (HU-PED-01)
         System.out.print("¿Desea filtrar por un usuario específico? (S/N): ");
         String filtro = leer.nextLine().trim().toUpperCase();
         
@@ -162,7 +159,6 @@ public class MenuPedido extends MenuBase {
                 for (DetallePedido d : p.getDetalles()) {
                     System.out.println("* " + d);
                 }
-                // REQUISITO: El total se muestra al final de los ítems con sangría
                 System.out.println("\n   >>> TOTAL DEL PEDIDO: $" + String.format("%.2f", p.getTotal()));
                 System.out.println("======================================================================\n");
                 encontro = true;

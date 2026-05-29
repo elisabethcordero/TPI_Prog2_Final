@@ -1,14 +1,9 @@
 package servicios;
 
 import config.Listas;
-import entidades.DetallePedido;
 import entidades.Pedido;
-import entidades.Producto;
-import entidades.Usuario;
 import enumeraciones.Estado;
 import enumeraciones.FormaPago;
-import excepciones.EntidadNoEncontradaException;
-import excepciones.StockInvalidoException;
 import java.util.List;
 
 public class PedidoService {

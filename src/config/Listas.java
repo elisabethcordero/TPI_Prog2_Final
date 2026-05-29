@@ -25,7 +25,7 @@ public class Listas {
 
     // --- MÉTODOS PARA CATEGORÍAS ---
     public static boolean agregarCategoria(Categoria categoria) {
-        // Validar que el nombre sea único (Regla de negocio HU-CAT-02)
+        // Validar que el nombre sea único
         for (Categoria c : categorias) {
             if (c.getNombre().equalsIgnoreCase(categoria.getNombre()) && !c.isEliminado()) {
                 return false; 
