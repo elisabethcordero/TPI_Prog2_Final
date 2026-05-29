@@ -208,11 +208,21 @@ public class MenuPedido extends MenuBase {
     }
 
     private void eliminar() {
+        listar();
+        if (PedidoService.obtenerActivos().isEmpty()) return;
+
         System.out.print("ID Pedido a eliminar: ");
         try {
             Long id = Long.parseLong(leer.nextLine());
-            if (PedidoService.eliminar(id)) {
-                System.out.println("Pedido eliminado con éxito.");
+            Pedido p = PedidoService.buscarPorId(id);
+            if (p != null) {
+                System.out.print("¿Desea eliminar el Pedido #" + p.getId() + "? (S/N): ");
+                if (leer.nextLine().equalsIgnoreCase("S")) {
+                    PedidoService.eliminar(id);
+                    System.out.println("Pedido eliminado con éxito.");
+                } else {
+                    System.out.println("Eliminación cancelada.");
+                }
             } else {
                 System.out.println("Error: ID inexistente.");
             }

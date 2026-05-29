@@ -57,8 +57,8 @@ public class MenuProducto extends MenuBase {
             try {
                 System.out.print("Precio: ");
                 precio = Double.parseDouble(leer.nextLine());
-                if (precio <= 0) {
-                    System.out.println("Error: El precio debe ser mayor a cero.");
+                if (precio < 0) {
+                    System.out.println("Error: El precio no puede ser negativo.");
                 } else {
                     precioValido = true;
                 }
