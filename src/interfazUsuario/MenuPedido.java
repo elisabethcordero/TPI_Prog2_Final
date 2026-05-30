@@ -50,7 +50,7 @@ public class MenuPedido extends MenuBase {
 
         MenuUsuario menuUser = new MenuUsuario();
         menuUser.listar();
-        System.out.print("ID del Usuario: ");
+        System.out.print("Selecciona el ID del Usuario para ingresar el pedido: ");
         Long idUser = Long.parseLong(leer.nextLine());
         entidades.Usuario usuario = UsuarioService.buscarPorId(idUser);
         if (usuario == null) {
