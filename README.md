@@ -22,8 +22,7 @@
 
 **Requisitos de Cátedra**
 
-- **Video de Demostración (Flujo Completo):** [Ingresar a la demostración en video](AGREGAR_LINK_AQUI)
-- **Documentación Académica (PDF):** [Descargar Documento PDF](AGREGAR_LINK_O_RUTA_DEL_PDF)
+- **Video de Demostración (Flujo Completo):** [Ingresar a la demostración en video] https://youtu.be/Z83WDUwQ2n0
 
 ---
 
@@ -102,7 +101,7 @@ src/
     └── prog2/
         ├── config/
         │   └── Listas.java
-        ├── entities/
+        ├── entidades/
         │   ├── Base.java
         │   ├── Calculable.java
         │   ├── Categoria.java
@@ -110,11 +109,11 @@ src/
         │   ├── Usuario.java
         │   ├── Pedido.java
         │   └── DetallePedido.java
-        ├── enums/
+        ├── enumeraciones/
         │   ├── Rol.java
         │   ├── Estado.java
         │   └── FormaPago.java
-        ├── exception/
+        ├── excepciones/
         │   ├── EntidadNoEncontradaException.java
         │   ├── PrecioInvalidoException.java
         │   ├── StockInvalidoException.java
@@ -125,7 +124,7 @@ src/
         │   ├── MenuProducto.java
         │   ├── MenuUsuario.java
         │   └── MenuPedido.java
-        ├── service/
+        ├── servicios/
         │   ├── CategoriaService.java
         │   ├── ProductoService.java
         │   ├── UsuarioService.java
