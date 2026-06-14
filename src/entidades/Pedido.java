@@ -40,8 +40,12 @@ public class Pedido extends Base implements Calculable {
     }
 
     public DetallePedido findeDetallePedidoByProducto(Producto producto) {
+        if (producto == null || producto.getId() == null) {
+            return null;
+        }
+        
         for (DetallePedido dp : detalles) {
-            if (dp.getProducto().getId().equals(producto.getId())) {
+            if (dp.getProducto() != null && dp.getProducto().getId().equals(producto.getId())) {
                 return dp;
             }
         }
