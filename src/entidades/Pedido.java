@@ -14,6 +14,7 @@ public class Pedido extends Base implements Calculable {
     private FormaPago formaPago;
     private Usuario usuario;
     private List<DetallePedido> detalles;
+    private static long contadorDetalle = 0;
 
     public Pedido() {
         super();
@@ -32,7 +33,7 @@ public class Pedido extends Base implements Calculable {
     }
 
     public void addDetallePedido(int cantidad, Producto producto) {
-        Long idDetalle = (long) (detalles.size() + 1);
+        Long idDetalle = ++contadorDetalle;
         DetallePedido nuevoDetalle = new DetallePedido(idDetalle, cantidad, producto);
         detalles.add(nuevoDetalle);
         calcularTotal();
