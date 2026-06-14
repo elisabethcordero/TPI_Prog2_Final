@@ -31,7 +31,7 @@ public class Pedido extends Base implements Calculable {
         this.estado = Estado.PENDIENTE;
     }
 
-    public void addDetallePedido(int cantidad, Double precioUnitario, Producto producto) {
+    public void addDetallePedido(int cantidad, Producto producto) {
         Long idDetalle = (long) (detalles.size() + 1);
         DetallePedido nuevoDetalle = new DetallePedido(idDetalle, cantidad, producto);
         detalles.add(nuevoDetalle);

@@ -82,7 +82,7 @@ public class MenuPedido extends MenuBase {
                     int cant = Integer.parseInt(leer.nextLine());
                     if (cant > 0 && cant <= prod.getStock()) {
                         
-                        nuevoPedido.addDetallePedido(cant, prod.getPrecio(), prod);
+                        nuevoPedido.addDetallePedido(cant, prod);
                         
                         prod.setStock(prod.getStock() - cant);
                         productosAfectados.add(prod);
