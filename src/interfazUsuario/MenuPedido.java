@@ -82,7 +82,7 @@ public class MenuPedido extends MenuBase {
                     int cant = Integer.parseInt(leer.nextLine());
                     if (cant > 0 && cant <= prod.getStock()) {
                         
-                        nuevoPedido.addDetallePedido(cant, prod.getPrecio(), prod);
+                        nuevoPedido.addDetallePedido(cant, prod);
                         
                         prod.setStock(prod.getStock() - cant);
                         productosAfectados.add(prod);
@@ -106,16 +106,15 @@ public class MenuPedido extends MenuBase {
                 System.out.println("Pedido cancelado: No se agregaron productos.");
             }
 
-        } catch (Exception e) {
-            // Si hay excepción, cancela la creación y evita datos inconsistentes
-            System.out.println("Error al crear el pedido: " + e.getMessage());
+        } catch (StockInvalidoException | NumberFormatException e) {
+            String msg = (e instanceof NumberFormatException)
+                ? "El valor ingresado no es un número válido."
+                : e.getMessage();
+            System.out.println("Error al crear el pedido: " + msg);
             System.out.println("Cancelando operación y restaurando stock...");
-            
-            // Restauramos el stock de lo que hayamos restado hasta el momento del error
             for (int i = 0; i < productosAfectados.size(); i++) {
-                Producto p = productosAfectados.get(i);
-                int cant = cantidadesAfectadas.get(i);
-                p.setStock(p.getStock() + cant);
+                productosAfectados.get(i).setStock(
+                    productosAfectados.get(i).getStock() + cantidadesAfectadas.get(i));
             }
         }
     }
@@ -185,12 +184,14 @@ public class MenuPedido extends MenuBase {
                 if (op == 1) {
                     System.out.println("1.PENDIENTE, 2.CONFIRMADO, 3.TERMINADO, 4.CANCELADO");
                     int st = Integer.parseInt(leer.nextLine());
+                    if (st < 1 || st > 4) { System.out.println("Opción no válida."); return; }
                     Estado nuevo = (st == 1) ? Estado.PENDIENTE : (st == 2) ? Estado.CONFIRMADO : (st == 3) ? Estado.TERMINADO : Estado.CANCELADO;
                     PedidoService.cambiarEstado(id, nuevo);
                     System.out.println("Estado actualizado.");
                 } else if (op == 2) {
                     System.out.println("1.TARJETA, 2.TRANSFERENCIA, 3.EFECTIVO");
                     int fp = Integer.parseInt(leer.nextLine());
+                    if (fp < 1 || fp > 3) { System.out.println("Opción no válida."); return; }
                     FormaPago nueva = (fp == 1) ? FormaPago.TARJETA : (fp == 2) ? FormaPago.TRANSFERENCIA : FormaPago.EFECTIVO;
                     PedidoService.cambiarFormaPago(id, nueva);
                     System.out.println("Forma de pago actualizada.");
@@ -201,9 +202,9 @@ public class MenuPedido extends MenuBase {
                 System.out.println("Error: ID inexistente.");
             }
         } catch (NumberFormatException e) {
-            System.out.println("Error: El ID ingresado no es válido (debe ser un número).");
+            System.out.println("Error: El valor ingresado no es un número válido.");
         } catch (Exception e) {
-            System.out.println("Error al editar.");
+            System.out.println("Error al editar: " + e.getMessage());
         }
     }
 

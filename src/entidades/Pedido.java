@@ -14,6 +14,7 @@ public class Pedido extends Base implements Calculable {
     private FormaPago formaPago;
     private Usuario usuario;
     private List<DetallePedido> detalles;
+    private static long contadorDetalle = 0;
 
     public Pedido() {
         super();
@@ -31,16 +32,20 @@ public class Pedido extends Base implements Calculable {
         this.estado = Estado.PENDIENTE;
     }
 
-    public void addDetallePedido(int cantidad, Double precioUnitario, Producto producto) {
-        Long idDetalle = (long) (detalles.size() + 1);
+    public void addDetallePedido(int cantidad, Producto producto) {
+        Long idDetalle = ++contadorDetalle;
         DetallePedido nuevoDetalle = new DetallePedido(idDetalle, cantidad, producto);
         detalles.add(nuevoDetalle);
         calcularTotal();
     }
 
     public DetallePedido findeDetallePedidoByProducto(Producto producto) {
+        if (producto == null || producto.getId() == null) {
+            return null;
+        }
+        
         for (DetallePedido dp : detalles) {
-            if (dp.getProducto().getId().equals(producto.getId())) {
+            if (dp.getProducto() != null && dp.getProducto().getId().equals(producto.getId())) {
                 return dp;
             }
         }

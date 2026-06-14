@@ -44,14 +44,14 @@ public class Main {
             // Pedido 1: Juan Perez compra Pizza y Coca
             entidades.Usuario juan = servicios.UsuarioService.buscarPorId(1L);
             entidades.Pedido p1 = new entidades.Pedido(0L, juan, enumeraciones.FormaPago.TARJETA);
-            p1.addDetallePedido(2, 12000.0, servicios.ProductoService.buscarPorId(1L)); // 2 Pizzas
-            p1.addDetallePedido(1, 2500.0, servicios.ProductoService.buscarPorId(2L)); // 1 Coca
+            p1.addDetallePedido(2, servicios.ProductoService.buscarPorId(1L)); // 2 Pizzas
+            p1.addDetallePedido(1, servicios.ProductoService.buscarPorId(2L)); // 1 Coca
             servicios.PedidoService.guardarPedido(p1);
 
             // Pedido 2: Carlos Lopez compra Postre
             entidades.Usuario carlos = servicios.UsuarioService.buscarPorId(3L);
             entidades.Pedido p2 = new entidades.Pedido(0L, carlos, enumeraciones.FormaPago.EFECTIVO);
-            p2.addDetallePedido(3, 4500.0, servicios.ProductoService.buscarPorId(3L)); // 3 Tiramisú
+            p2.addDetallePedido(3, servicios.ProductoService.buscarPorId(3L)); // 3 Tiramisú
             servicios.PedidoService.guardarPedido(p2);
         } catch (Exception e) {
             System.out.println("Error al cargar pedidos de prueba: " + e.getMessage());
